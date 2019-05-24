@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>video-chat</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    html,body,.wrap {
+      width: 100%;
+      height: 100%;
+    }
+    .content {
+      height: 100%;
+      padding-top: 60px;
+    }
+    .ho{
+      height: 100%;
+      overflow: hidden;
+      padding:10px;
+    }
+    .panel{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .panel-body {
+      flex: 1;
+      overflow: auto;
+    }
+    .h100 {
+      height: 100%;
+    }
+    .p-hint {
+      text-align: center;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="javascript:;">视频群聊</a>
+      </div>
+    </nav>
+    <div class="container-fluid content">
+      <div class="row h100">
+        <div class="col-sm-8 ho">
+          <div class="row video-box" id="videoBox">
+            <video src="" class="col-md-4" id="localVideo" autoplay controls></video>
+          </div>
+        </div>
+        <div class="col-sm-4 ho">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">文本聊天</h3>
+            </div>
+            <div id="textBox" class="panel-body">
+            </div>
+            <div class="panel-bottom">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="输入消息..." id="textMsg">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" onclick="sendTextMsg()" type="button">发送</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 断线重连 -->
+  <script src="https://cdn.bootcss.com/reconnecting-websocket/1.0.0/reconnecting-websocket.min.js"></script>
+  <script src="/js/adapter.js"></script>
+  <script src="./js/client.js"></script>
+
+</body>
+</html>

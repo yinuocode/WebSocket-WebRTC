@@ -1,0 +1,13 @@
+{
+  "name": "webscoket",
+  "version": "1.0.0",
+  "description": "webscoket",
+  "scripts": {
+    "start": "node server.js",
+    "ws": "node server-ws.js"
+  },
+  "dependencies": {
+    "express": "^4.17.0",
+    "ws": "^7.0.0"
+  }
+}
