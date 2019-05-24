@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "webscoket",
   "scripts": {
-    "start": "node server.js",
-    "ws": "node server-ws.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.17.0",
